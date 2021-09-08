@@ -1,0 +1,5 @@
+1 install Linux backend, docker 
+2 go to https://hub.docker.com/r/odysseusinc/rstudio-ohdsi
+3 docker pull odysseusinc/rstudio-ohdsi:latest
+4 docker run -d --name=rstudio-ohdsi -p 8787:8787 -e USER=ohdsi -e PASSWORD=yourpasswordhere odysseusinc/rstudio-ohdsi:latest
+5 By opening http://localhost:8787 you will be able to work with RStudio. Shiny server runs on port 3838.
