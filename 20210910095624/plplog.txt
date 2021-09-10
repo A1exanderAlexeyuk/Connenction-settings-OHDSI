@@ -1,0 +1,25 @@
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Patient-Level Prediction Package version 4.3.10
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	AnalysisID:         20210910095624
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	CohortID:           1
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	OutcomeID:          2
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Cohort size:        18162
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Covariates:         11057
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Population size:    18162
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Cases:              101
+2021-09-10 09:56:24	[Main thread]	INFO	PatientLevelPrediction	runPlp	Saving plpData to   C:/Users/Alex/D/study/plpCustomDemo/20210910095624/plpData
+2021-09-10 09:56:28	[Main thread]	WARN	PatientLevelPrediction	personSplitter	deprecatedWarning: 'personSplitter' is deprecated. Use 'randomSplitter' instead. See help("Deprecated") 
+2021-09-10 09:56:28	[Main thread]	INFO	PatientLevelPrediction	randomSplitter	Creating a 20% test and 80% train (into 3 folds) random stratified split by class
+2021-09-10 09:56:28	[Main thread]	INFO	PatientLevelPrediction	randomSplitter	Data split into 3632 test cases and 14530 train cases (4844, 4843, 4843)
+2021-09-10 09:56:29	[Main thread]	INFO	PatientLevelPrediction	runPlp	Training LR Torch model
+2021-09-10 09:56:30	[Main thread]	INFO	FeatureExtraction	tidyCovariateData	Removing 2 redundant covariates
+2021-09-10 09:56:30	[Main thread]	INFO	FeatureExtraction	tidyCovariateData	Removing 4395 infrequent covariates
+2021-09-10 09:56:30	[Main thread]	INFO	FeatureExtraction	tidyCovariateData	Normalizing covariates
+2021-09-10 09:56:37	[Main thread]	INFO	FeatureExtraction	tidyCovariateData	Tidying covariates took 8.57 secs
+2021-09-10 09:56:38	[Main thread]	INFO	PatientLevelPrediction	toSparseM	starting toSparseM
+2021-09-10 09:56:39	[Main thread]	INFO	PatientLevelPrediction	MapCovariates	starting MapCovariates
+2021-09-10 09:56:59	[Main thread]	INFO	PatientLevelPrediction	MapCovariates	finished MapCovariates
+2021-09-10 09:57:00	[Main thread]	INFO	PatientLevelPrediction	toSparseM	toSparseM non temporal used
+2021-09-10 09:57:12	[Main thread]	INFO	PatientLevelPrediction	toSparseM	finishing toSparseM
+2021-09-10 09:57:17	[Main thread]	FATAL	PatientLevelPrediction	3	Error in value[[3L]](cond) :    Error in py_module_import(module, convert = convert): ModuleNotFoundError: No module named 'rpytools' 
+2021-09-10 09:59:08	[Main thread]	FATAL			Error: unexpected symbol in "library(reticulate)os" 
+2021-09-10 09:59:08	[Main thread]	FATAL			Error: unexpected '>' in ">" 

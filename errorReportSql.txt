@@ -1,0 +1,44 @@
+DBMS:
+postgresql
+
+Error:
+org.postgresql.util.PSQLException: ERROR: relation "plpdemo" already exists
+
+SQL:
+select 1 as cohort_definition_id, de.person_id as subject_id,
+    drug_era_start_date as cohort_start_date,
+    (drug_era_end_date + 30*INTERVAL'1 day') as cohort_end_date
+into alex_alexeyuk_results.plpDemo
+from
+(select * from cdm_531.drug_era 
+  inner join cdm_531.concept_ancestor ca on ca.descendant_concept_id = cdm_531.drug_era.DRUG_CONCEPT_ID
+  where ca.ancestor_concept_id = 974166) as de 
+inner join
+(select person_id, min(drug_era_start_date) as first_date
+    from cdm_531.drug_era  
+    inner join cdm_531.concept_ancestor ca on ca.descendant_concept_id = cdm_531.drug_era.DRUG_CONCEPT_ID
+    where ca.ancestor_concept_id = 974166 group by person_id) as first_dates
+on de.person_id = first_dates.person_id and de.drug_era_start_date = first_dates.first_date
+
+R version:
+R version 4.1.1 (2021-08-10)
+
+Platform:
+x86_64-w64-mingw32
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- utils
+- datasets
+- methods
+- base
+
+Other attached packages:
+- PatientLevelPrediction (4.3.10)
+- FeatureExtraction (3.1.1)
+- Andromeda (0.5.0)
+- dplyr (1.0.7)
+- SqlRender (1.8.0)
+- DatabaseConnector (4.0.2)
